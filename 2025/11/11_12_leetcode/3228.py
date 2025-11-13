@@ -1,0 +1,13 @@
+class Solution:
+    def maxOperations(self, s: str) -> int:
+        ones = 0
+        ans = 0
+        length = len(s)
+
+        for i in range(length):
+            if s[i] == "1" :
+                ones += 1
+            elif s[i] == "0" and (i+1 == length or s[i+1] == "1"):
+                ans += ones
+
+        return ans
